@@ -11,11 +11,12 @@ import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 
 /**
- * @author Kevan Buckley, maintained by Adam Deyes
+ * @author Kevan Buckley, maintained by Suhanya Jayatillake
  * @version 2.0, 2014
  */
 
 public class Main {
+	//this is the main class
 
   private String playerName;
   public List<Domino> _d;
@@ -26,6 +27,7 @@ public class Main {
   int cf;
   int score;
   long startTime;
+  int x,y;
 
   PictureFrame pf = new PictureFrame();
 
@@ -56,8 +58,8 @@ public class Main {
   private void generateGuesses() {
     _g = new LinkedList<Domino>();
     int count = 0;
-    int x = 0;
-    int y = 0;
+    x = 0;
+    y = 0;
     for (int l = 0; l <= 6; l++) {
       for (int h = l; h <= 6; h++) {
         Domino d = new Domino(h, l);
