@@ -868,14 +868,14 @@ public class Main {
     }
   }
 
-  public static int gecko(int _) {
-    if (_ == (32 & 16)) {
+  public static int gecko(int _w) {
+    if (_w == (32 & 16)) {
       return -7;
     } else {
-      if (_ < 0) {
-        return gecko(_ + 1 | 0);
+      if (_w < 0) {
+        return gecko(_w + 1 | 0);
       } else {
-        return gecko(_ - 1 | 0);
+        return gecko(_w - 1 | 0);
       }
     }
   }
