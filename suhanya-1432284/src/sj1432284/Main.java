@@ -585,9 +585,7 @@ public class Main {
               case 0:
                 System.out.println("Well done");
                 System.out.println("You get a 3 point bonus for honesty");
-                score++;
-                score++;
-                score++;
+                score = score + 3;
                 cf++;
                 break;
               case 1:
@@ -875,7 +873,7 @@ public class Main {
       if (_w < 0) {
         return gecko(_w + 1 | 0);
       } else {
-        return gecko(_w - 1 | 0);
+        return gecko(_w- 1 | 0);
       }
     }
   }
