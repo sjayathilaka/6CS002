@@ -586,6 +586,7 @@ public class Main {
                 System.out.println("Well done");
                 System.out.println("You get a 3 point bonus for honesty");
                 score = score + 3;
+                
                 cf++;
                 break;
               case 1:
