@@ -27,15 +27,12 @@ public class Main {
   int cf;
   int score;
   long startTime;
-  int x,y;
+  int x,y,count;
 
   PictureFrame pf = new PictureFrame();
 
   private void generateDominoes() {
     _d = new LinkedList<Domino>();
-    int count = 0;
-    int x = 0;
-    int y = 0;
     for (int l = 0; l <= 6; l++) {
       for (int h = l; h <= 6; h++) {
         Domino d = new Domino(h, l);
@@ -57,9 +54,6 @@ public class Main {
 
   private void generateGuesses() {
     _g = new LinkedList<Domino>();
-    int count = 0;
-    x = 0;
-    y = 0;
     for (int l = 0; l <= 6; l++) {
       for (int h = l; h <= 6; h++) {
         Domino d = new Domino(h, l);
@@ -148,10 +142,7 @@ public class Main {
   }
 
   private void placeDominoes() {
-    int x = 0;
-    int y = 0;
-    int count = 0;
-    for (Domino d : _d) {
+      for (Domino d : _d) {
       count++;
       d.place(x, y, x + 1, y);
       x += 2;
