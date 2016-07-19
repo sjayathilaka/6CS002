@@ -30,6 +30,7 @@ public class Main {
   int x,y,count;
 
   PictureFrame pf = new PictureFrame(this);
+  GuessDomino Guessdomino= new GuessDomino();
 
   private void generateDominoes() {
     _d = new LinkedList<Domino>();
@@ -75,20 +76,6 @@ public class Main {
       } else {
         grid[d.hy][d.hx] = d.high;
         grid[d.ly][d.lx] = d.low;
-      }
-    }
-  }
-
-  void collateGuessGrid() {
-    for (int r = 0; r < 7; r++) {
-      for (int c = 0; c < 8; c++) {
-        gg[r][c] = 9;
-      }
-    }
-    for (Domino d : _g) {
-      if (d.placed) {
-        gg[d.hy][d.hx] = d.high;
-        gg[d.ly][d.lx] = d.low;
       }
     }
   }
@@ -380,7 +367,7 @@ public class Main {
         }
         pg();
         generateGuesses();
-        collateGuessGrid();
+        Guessdomino.collateGuessGrid();
         mode = 1;
         cf = 0;
         score = 0;
@@ -505,7 +492,7 @@ public class Main {
                 d.place(x2, y2, x, y);
               }
               score += 1000;
-              collateGuessGrid();
+              Guessdomino.collateGuessGrid();
               pf.dp.repaint();
             }
             break;
@@ -542,7 +529,7 @@ public class Main {
               gg[lkj.hy][lkj.hx] = 9;
               gg[lkj.ly][lkj.lx] = 9;
               score -= 1000;
-              collateGuessGrid();
+              Guessdomino.collateGuessGrid();
               pf.dp.repaint();
             }
             break;
