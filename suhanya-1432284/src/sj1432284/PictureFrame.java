@@ -3,7 +3,7 @@ import java.awt.*;
 
 import javax.swing.*;
 /**
- * @author Kevan Buckley, maintained by Adam Deyes
+ * @author Kevan Buckley, maintained by  Suhanya Jayatillake
  * @version 2.0, 2014
  */
 
@@ -12,6 +12,7 @@ public class PictureFrame {
   public Main master = null;
   
   int radius;
+  
   class DominoPanel extends JPanel {
     private static final long serialVersionUID = 4190229282411119364L;
 
@@ -35,6 +36,8 @@ public class PictureFrame {
         fillDigitGivenCentre(g, 30 + see * 20, 10, 20, see+1);
       }
     }
+    
+  
 
     public void drawDomino(Graphics g, Domino d) {
       if (d.placed) {
@@ -122,7 +125,7 @@ public class PictureFrame {
 
   public DominoPanel dp;
 
-  public void PictureFrame(Main sf) {
+  public PictureFrame(Main sf) {
     master = sf;
     if (dp == null) {
       JFrame f = new JFrame("Abominodo");
