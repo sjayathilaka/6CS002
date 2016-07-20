@@ -19,6 +19,7 @@ public class Main {
 	//this is the main class
 
   private String playerName;
+  static final double MATH_CONSTANT=0.5; 
   public List<Domino> _d;
   public List<Domino> _g;
   public int[][] grid = new int[7][8];
@@ -122,7 +123,7 @@ public class Main {
 
   private void invertSomeDominoes() {
     for (Domino d : _d) {
-      if (Math.random() > 0.5) {
+      if (Math.random() > MATH_CONSTANT) {
         d.invert();
       }
     }
@@ -147,7 +148,7 @@ public class Main {
 
   private void rotateDominoes() {
     // for (Domino d : dominoes) {
-    // if (Math.random() > 0.5) {
+    // if (Math.random() > MATH_CONSTANT) {
     // System.out.println("rotating " + d);
     // }
     // }
@@ -163,7 +164,7 @@ public class Main {
     Domino d = findDominoAt(x, y);
     if (d.thisIsTopLeftOfDomino(x, y)) {
       if (d.ishl()) {
-        boolean weFancyARotation = Math.random() < 0.5;
+        boolean weFancyARotation = Math.random() < MATH_CONSTANT;
         if (weFancyARotation) {
           if (theCellBelowIsTopLeftOfHorizontalDomino(x, y)) {
             Domino e = findDominoAt(x, y + 1);
@@ -178,7 +179,7 @@ public class Main {
           }
         }
       } else {
-        boolean weFancyARotation = Math.random() < 0.5;
+        boolean weFancyARotation = Math.random() < MATH_CONSTANT;
         if (weFancyARotation) {
           if (theCellToTheRightIsTopLeftOfVerticalDomino(x, y)) {
             Domino e = findDominoAt(x + 1, y);
