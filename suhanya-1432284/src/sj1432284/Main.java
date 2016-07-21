@@ -855,7 +855,7 @@ public class Main {
 
   public void drawDominoes(Graphics g) {
     for (Domino d : dominoList) {
-      pf.dp.drawDomino(g, d);
+      d.drawDomino(g, pf.dp);
     }
   }
 
@@ -873,7 +873,7 @@ public class Main {
 
   public void drawGuesses(Graphics g) {
     for (Domino d : _g) {
-      pf.dp.drawDomino(g, d);
+      d.drawDomino(g, pf.dp);
     }
   }
   //1432284

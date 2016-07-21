@@ -1,4 +1,10 @@
 package sj1432284;
+
+import java.awt.Color;
+import java.awt.Graphics;
+
+import sj1432284.PictureFrame.DominoPanel;
+
 /**
  * @author Kevan Buckley, maintained by Adam Deyes
  * @version 2.0, 2014
@@ -75,5 +81,27 @@ public class Domino implements Comparable<Domino> {
   }
   
   
+  
+  public boolean thisIsTopLeftOfDomino(int x, int y) {
+	    return (x == Math.min(this.lx, this.hx)) && (y == Math.min(this.ly, this.hy));
+	  }
+
+  public void drawDomino(Graphics g, DominoPanel dominoPanel) {
+	    if (placed) {
+	      int y = Math.min(ly, hy);
+	      int x = Math.min(lx, hx);
+	      int w = Math.abs(lx - hx) + 1;
+	      int h = Math.abs(ly - hy) + 1;
+	      g.setColor(Color.WHITE);
+	      g.fillRect(20 + x * 20, 20 + y * 20, w * 20, h * 20);
+	      g.setColor(Color.RED);
+	      g.drawRect(20 + x * 20, 20 + y * 20, w * 20, h * 20);
+	      dominoPanel.drawDigitGivenCentre(g, 30 + hx * 20, 30 + hy * 20, 20, high,
+	         Color.BLUE);
+	      dominoPanel.drawDigitGivenCentre(g, 30 + lx * 20, 30 + ly * 20, 20, low,
+	          Color.BLUE);
+	   }
+	}
+
   
 }
