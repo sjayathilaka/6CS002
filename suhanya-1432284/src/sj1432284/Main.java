@@ -10,6 +10,8 @@ import javax.swing.JEditorPane;
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 
+
+
 /**
  * @author Kevan Buckley, maintained by Suhanya Jayatillake
  * @version 2.0, 2014
@@ -28,7 +30,7 @@ public class Main {
   int cf;
   int score;
   long startTime;
-  int x,y,count;
+  int x,y,count=0;
 
   PictureFrame pf = new PictureFrame(this);
   GuessDomino Guessdomino= new GuessDomino();
@@ -68,6 +70,19 @@ public class Main {
       System.exit(0);
     }
   }
+  
+  private void dominoList(int x, int y, int l,int h){
+	  // _d = new LinkedList<Domino>();
+	     //for (int h = l; h <=6; h++) {
+	          Domino d = new Domino(h, l);
+	       dominoList.add(d);
+	       d.place(x, y, x + 1, y);
+	       x += 2;
+	       if (x > 6) {
+	         x = 0;
+	         y++;
+	       }
+	     }
 
   void collateGrid() {
     for (Domino d : dominoList) {
