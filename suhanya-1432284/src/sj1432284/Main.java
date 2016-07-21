@@ -225,13 +225,21 @@ public class Main {
 
  
   private Domino findDominoAt(int x, int y) {
-    for (Domino d : dominoList) {
-      if ((d.lx == x && d.ly == y) || (d.hx == x && d.hy == y)) {
-        return d;
-      }
-    }
+	  executeDominoAtBy(x, y);
     return null;
   }
+
+/**
+ * @param x
+ * @param y
+ */
+private void executeDominoAtBy(int x, int y) {
+	for (Domino d : dominoList) {
+		  if ((d.lx == x && d.ly == y) || (d.hx == x && d.hy == y)) {
+			  return;
+		  }
+    }
+}
 
   private Domino findGuessAt(int x, int y) {
     for (Domino d : _g) {
