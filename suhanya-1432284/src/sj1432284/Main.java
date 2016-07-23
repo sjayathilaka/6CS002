@@ -243,7 +243,9 @@ private void executeDominoAtBy(int x, int y) {
 
   private Domino findGuessAt(int x, int y) {
     for (Domino d : _g) {
-      if ((d.lx == x && d.ly == y) || (d.hx == x && d.hy == y)) {
+    	boolean findGuesslx = (d.lx == x && d.ly == y);
+    	boolean findGuesshx = (d.hx == x && d.hy == y);
+      if (findGuesslx || findGuesshx) {
         return d;
       }
     }
